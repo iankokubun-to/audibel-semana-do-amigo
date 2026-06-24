@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista VIP - Semana do Amigo Audibel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        audibelRed: '#A91F20',
+                        audibelDark: '#404040',
+                    },
+                    fontFamily: {
+                        'barlow': ['"Barlow Condensed"', 'sans-serif'],
+                        'open': ['"Open Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-open text-audibelDark antialiased bg-[#2A2A2A] min-h-screen flex flex-col">
+
+    <!-- Topbar de Urgência -->
+    <div class="bg-audibelRed text-white text-center py-2 px-4 shadow-md relative z-20">
+        <p class="font-bold text-sm md:text-base uppercase tracking-wider flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+            </svg>
+            Acesso Restrito: A Melhor Condição do Ano será liberada em breve!
+        </p>
+    </div>
+
+    <!-- Cabeçalho (Header) -->
+    <header class="bg-white shadow-sm relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="logo_audibel_colorido.png" alt="Audibel Aparelhos Auditivos" class="h-10 md:h-14">
+            <div class="hidden md:flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold text-audibelDark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-audibelRed" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                + de 42 anos de tradição
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section / Waitlist Form -->
+    <main class="flex-grow flex items-center pt-8 pb-16">
+        <div class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Coluna 1: Texto e Benefícios -->
+            <div class="space-y-6">
+                <div class="inline-block bg-audibelRed text-white font-bold px-3 py-1 rounded-full text-sm mb-2 shadow-lg">
+                    LOTE VIP - LISTA DE ESPERA
+                </div>
+                <h1 class="font-barlow text-5xl md:text-6xl font-bold text-white uppercase leading-tight">
+                    A oportunidade <span class="text-audibelRed">maior que a Black Friday</span> chegou.
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300">
+                    Inscreva-se na nossa Lista VIP e garanta acesso antecipado às condições mais incríveis do ano para a linha Audibel.
+                </p>
+
+                <div class="bg-[#1C1C1C] p-6 rounded-2xl shadow-sm border border-gray-700 space-y-4">
+                    <h3 class="font-bold text-lg text-white">Esta oportunidade exclusiva é para quem deseja:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <svg class="h-6 w-6 text-audibelRed flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-300"><strong>Mais clareza e conexão:</strong> Modelos modernos que ajudam a entender a fala com facilidade e se conectam diretamente aos seus dispositivos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="h-6 w-6 text-audibelRed flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-300"><strong>Ouvir bem dos dois lados:</strong> Adquirir o seu segundo aparelho (adaptação bilateral) com um desconto nunca visto para uma audição realmente completa.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="h-6 w-6 text-audibelRed flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-300"><strong>Primeiro aparelho:</strong> Iniciar sua jornada auditiva com o melhor custo-benefício de 2026.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Formulário -->
+            <div class="space-y-8 flex justify-center">
+                <!-- Formulário -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl relative z-20 border-t-8 border-audibelRed w-full max-w-md">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-barlow font-bold uppercase text-audibelDark">Garanta seu lugar</h2>
+                        <p class="text-sm text-gray-500 mt-1">As vagas com prioridade de estoque são limitadas.</p>
+                    </div>
+
+                    <form action="#" method="POST" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-audibelDark mb-1">Seu nome completo</label>
+                            <input type="text" id="name" name="name" placeholder="Digite seu nome" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-audibelRed focus:border-transparent outline-none transition-all text-audibelDark">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold text-audibelDark mb-1">Seu WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(DDD) 90000-0000" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-audibelRed focus:border-transparent outline-none transition-all text-audibelDark">
+                        </div>
+                        <button type="submit" class="w-full bg-audibelRed hover:bg-red-800 text-white font-bold py-4 px-6 rounded-xl text-lg transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 uppercase tracking-wide">
+                            QUERO ENTRAR PARA A LISTA VIP
+                        </button>
+                        <p class="text-xs text-center text-gray-400 mt-4 flex justify-center items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                            Seus dados estão 100% seguros.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
