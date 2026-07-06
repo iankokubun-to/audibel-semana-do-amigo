@@ -99,7 +99,7 @@
                         <p class="text-sm text-gray-500 mt-1">As vagas com prioridade de estoque são limitadas.</p>
                     </div>
 
-                    <form action="#" method="POST" class="space-y-4">
+                    <form action="https://app.pipelead.to/webhook/lead/RcES8GJ5cI" method="POST" class="space-y-4">
                         <div>
                             <label for="name" class="block text-sm font-semibold text-audibelDark mb-1">Seu nome completo</label>
                             <input type="text" id="name" name="name" placeholder="Digite seu nome" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-audibelRed focus:border-transparent outline-none transition-all text-audibelDark">
@@ -118,11 +118,67 @@
                             Seus dados estão 100% seguros.
                         </p>
                     </form>
+
+                    <!-- Mensagem de Sucesso -->
+                    <div id="success-message" class="hidden text-center py-8">
+                        <svg class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h2 class="text-2xl font-barlow font-bold uppercase text-audibelDark mb-2">Você está na lista!</h2>
+                        <p class="text-gray-600">Recebemos seu cadastro com sucesso. Em breve entraremos em contato com as condições exclusivas da Semana do Amigo Audibel.</p>
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
+
+    <script>
+        (function() {
+            const form = document.querySelector('form[action^="https://app.pipelead.to"]');
+            if (!form) return;
+
+            const successMessage = document.getElementById('success-message');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'ENVIANDO...';
+                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+                try {
+                    const formData = new FormData(form);
+                    const params = new URLSearchParams();
+                    for (const [key, value] of formData.entries()) {
+                        params.append(key, value);
+                    }
+
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: params.toString()
+                    });
+
+                    if (response.ok || response.status === 201) {
+                        form.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                    } else {
+                        throw new Error('Erro na submissão');
+                    }
+                } catch (error) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                    alert('Ocorreu um erro ao enviar seus dados. Por favor, tente novamente.');
+                }
+            });
+        })();
+    </script>
 
 </body>
 </html>
